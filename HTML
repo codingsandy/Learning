@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Your Website Header</h1>
+</header>
+
+<div class="container">
+    <h2>Welcome to Web Server 1</h2>
+    <p>This website is under Development. Server 1 is Up and Runing..!!</p>
+    <p>The IP address of this EC2 instance is: <span id="ip-address"></span></p>
+</div>
+
+<script>
+    // Fetch the EC2 instance's IP address using an HTTP request
+    fetch('http://169.254.169.254/latest/meta-data/public-ipv4')
+        .then(response => response.text())
+        .then(data => {
+            // Insert the IP address into the webpage
+            document.getElementById('ip-address').textContent = data;
+        })
+        .catch(error => {
+            console.error('Error fetching IP address:', error);
+        });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+--------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix-style Login Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #141414;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .logo {
+            margin-bottom: 30px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            background-color: #e50914;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #bf0812;
+        }
+
+        .signup-link {
+            color: #757575;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo" width="200">
+    <h2>Welcome back!</h2>
+    <form>
+        <input type="text" placeholder="Email or phone number" required><br>
+        <input type="password" placeholder="Password" required><br>
+        <input type="submit" value="Sign In">
+    </form>
+    <a class="signup-link" href="#">New to Netflix? Sign up now.</a>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix-style Login Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #141414;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .logo {
+            margin-bottom: 30px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            background-color: #e50914;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #bf0812;
+        }
+
+        .signup-link {
+            color: #757575;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <img class="logo" src="https://t4.ftcdn.net/jpg/04/22/05/25/360_F_422052544_HlZLIiA9tRd1B3FGjX8k9ZPqyHCGX2ef.jpg" alt="Netflix Logo" width="200">
+    <h2>Welcome to Server 01</h2>
+    <h4>This website is under Development</h4>
+    <h7>- Developed by Sandeep -<h6>
+    <form>
+        <input type="text" placeholder="Email or phone number" required><br>
+        <input type="password" placeholder="Password" required><br>
+        <input type="submit" value="Sign In">
+    </form>
+    <a class="signup-link" href="#">New to DevOps? Sign up now.</a>
+</div>
+
+</body>
+</html>
+
+
+
+-------------------------------------------------------
