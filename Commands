@@ -1,0 +1,273 @@
+ Linux commands that are commonly used and can be incredibly useful:
+
+1. **ls**: List directory contents.
+   - Example: `ls`, `ls -l`, `ls -a`
+
+2. **cd**: Change directory.
+   - Example: `cd directory_name`, `cd ..`
+
+3. **pwd**: Print working directory.
+   - Example: `pwd`
+
+4. **mkdir**: Make directory.
+   - Example: `mkdir directory_name`
+
+5. **rm**: Remove files or directories.
+   - Example: `rm filename`, `rm -r directory_name`
+
+6. **cp**: Copy files or directories.
+   - Example: `cp source_file destination_file`, `cp -r source_directory destination_directory`
+
+7. **mv**: Move or rename files or directories.
+   - Example: `mv old_filename new_filename`, `mv source_file destination_directory`
+
+8. **touch**: Create an empty file or update the access and modification times of a file.
+   - Example: `touch filename`
+
+9. **cat**: Concatenate and display files.
+   - Example: `cat filename`
+
+10. **grep**: Search for patterns in files.
+    - Example: `grep pattern filename`
+
+11. **head**: Output the first part of files.
+    - Example: `head filename`
+
+12. **tail**: Output the last part of files.
+    - Example: `tail filename`
+
+13. **chmod**: Change file permissions.
+    - Example: `chmod permissions filename`
+
+14. **chown**: Change file owner and group.
+    - Example: `chown owner:group filename`
+
+15. **sudo**: Execute a command as the superuser (root).
+    - Example: `sudo command`
+
+16. **df**: Display free disk space.
+    - Example: `df`
+
+17. **du**: Estimate file space usage.
+    - Example: `du -sh directory_name`
+
+18. **ps**: Report a snapshot of the current processes.
+    - Example: `ps aux`
+
+19. **kill**: Send signals to processes.
+    - Example: `kill process_id`
+
+20. **man**: Display the manual pages for commands.
+    - Example: `man command_name`
+
+---------------------------------------------------------------------------------------------------
+
+Vim is a powerful and highly customizable text editor, commonly used in the Linux environment. Here are some useful Vim commands to help you navigate and edit files efficiently:
+
+### Navigation:
+
+1. **h, j, k, l**: Move left, down, up, and right respectively.
+2. **Ctrl + f**: Page down (forward).
+3. **Ctrl + b**: Page up (backward).
+4. **0**: Move to the beginning of the line.
+5. **$**: Move to the end of the line.
+6. **gg**: Move to the beginning of the file.
+7. **G**: Move to the end of the file.
+8. **:n**: Move to line number n.
+9. **Ctrl + u**: Move half a page up.
+10. **Ctrl + d**: Move half a page down.
+
+### Editing:
+
+1. **i**: Insert text before the cursor.
+2. **a**: Append text after the cursor.
+3. **o**: Open a new line below the current line and enter insert mode.
+4. **O**: Open a new line above the current line and enter insert mode.
+5. **x**: Delete character under the cursor.
+6. **dd**: Delete the current line.
+7. **yy**: Yank (copy) the current line.
+8. **p**: Paste the yanked or deleted text after the cursor.
+9. **u**: Undo the last change.
+10. **Ctrl + r**: Redo the last undone change.
+
+### Saving and Quitting:
+
+1. **:w**: Save the file.
+2. **:q**: Quit Vim (only if no changes were made).
+3. **:q!**: Quit Vim without saving changes.
+4. **:wq** or **:x**: Save and quit.
+5. **ZZ**: Save and quit (similar to :wq).
+
+### Search and Replace:
+
+1. **/pattern**: Search forward for the pattern.
+2. **?pattern**: Search backward for the pattern.
+3. **n**: Jump to the next occurrence of the pattern.
+4. **N**: Jump to the previous occurrence of the pattern.
+5. **:%s/old/new/g**: Replace all occurrences of 'old' with 'new' in the entire file.
+6. **:s/old/new/g**: Replace all occurrences of 'old' with 'new' in the current line.
+
+### Miscellaneous:
+
+1. **:set number**: Display line numbers.
+2. **:set nonumber**: Hide line numbers.
+3. **:help**: Open Vim's built-in help.
+4. **:qall**: Quit all open files.
+5. **:vsp filename**: Open a file in a vertical split.
+6. **Ctrl + w + Arrow keys**: Navigate between splits.
+
+---------------------------------------------------------------------------------------
+
+Setting up a web server on an AWS EC2 instance running Linux is quite similar to setting it up on a local Linux server. Below are the basic steps using Apache as an example:
+
+### 1. Launch an EC2 Instance:
+
+Launch an EC2 instance with Amazon Linux or any other Linux distribution of your choice. Make sure to configure security groups to allow inbound traffic on ports 80 (HTTP) and 443 (HTTPS) if you plan to serve web traffic.
+
+### 2. Connect to Your EC2 Instance:
+
+Connect to your EC2 instance using SSH:
+
+```bash
+ssh -i your-key.pem ec2-user@your-instance-ip
+```
+
+### 3. Update Package Repository and Install Apache:
+
+Update the package repository and install Apache:
+
+```bash
+sudo yum update -y
+sudo yum install httpd -y
+```
+
+### 4. Start and Enable Apache:
+
+Start Apache and enable it to start on boot:
+
+```bash
+sudo systemctl start httpd
+sudo systemctl enable httpd
+```
+
+### 5. Configure Firewall (if applicable):
+
+If the instance has a firewall (such as AWS Security Groups), ensure that inbound traffic on ports 80 (HTTP) and 443 (HTTPS) is allowed.
+
+### 6. Test Apache:
+
+Open a web browser and enter your instance's public IP address in the address bar. You should see the Apache default page indicating that Apache is running correctly.
+
+### 7. Serve Your Website:
+
+Place your website files in the `/var/www/html/` directory. You can use SFTP or SCP to transfer files to your instance.
+
+### 8. Configure Virtual Hosts (optional):
+
+If hosting multiple websites or domains on the same server, you can configure virtual hosts by creating additional configuration files in `/etc/httpd/conf.d/`.
+
+### 9. Secure Your Website with SSL/TLS (optional):
+
+You can secure your website using SSL/TLS certificates. Obtain and install SSL certificates from a Certificate Authority (CA) such as Let's Encrypt, or use AWS Certificate Manager (ACM) for free SSL certificates.
+
+### 10. Restart Apache:
+
+After making any configuration changes, restart Apache to apply the changes:
+
+```bash
+sudo systemctl restart httpd
+```
+
+### 11. Monitor Apache Logs:
+
+Monitor Apache access and error logs located in `/var/log/httpd/` to troubleshoot any issues with your web server.
+
+----------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Your Website Header</h1>
+</header>
+
+<div class="container">
+    <h2>Welcome to Your Website</h2>
+    <p>This is a sample webpage. You can modify and add content as needed.</p>
+    <p>The IP address of this EC2 instance is: <span id="ip-address"></span></p>
+</div>
+
+<script>
+    // Fetch the EC2 instance's IP address using an HTTP request
+    fetch('http://169.254.169.254/latest/meta-data/public-ipv4')
+        .then(response => response.text())
+        .then(data => {
+            // Insert the IP address into the webpage
+            document.getElementById('ip-address').textContent = data;
+        })
+        .catch(error => {
+            console.error('Error fetching IP address:', error);
+        });
+</script>
+
+</body>
+</html>
+
+
+---------------------------------------------------------------
+
+		   ITA creation 
+
+server
+clone
+ebs
+backup - ami , ebs , rds 
+same ip to other ec2 private
+snapshot
+RDS provision
+DB in EC2
+Orale DB
+Linux - 
+AMI role for s3
+route53
+
+
+
+
+
+
+
+-------------------------------------------------------
+
